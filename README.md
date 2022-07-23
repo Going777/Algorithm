@@ -7,3 +7,4 @@
 | 22.07.20       | BOJ        | [2588번: 곱셈](https://www.acmicpc.net/problem/2588) | Bronze 3 | `수학` `사칙연산` | :heavy_check_mark: |
 | 22.07.21       | BOJ        | [1673번: 치킨 쿠폰](https://www.acmicpc.net/problem/1673) | Bronze 2 | `수학` `구현` | :heavy_check_mark: |
 | 22.07.22       | BOJ        | [1934번: 최소공배수](https://www.acmicpc.net/problem/1934) | Bronze 1 | `수학` `정수론` `유클리드호제법` | :heavy_check_mark:  :heavy_exclamation_mark: |
+| 22.07.23       | BOJ        | [2163번: 초콜릿 자르기](https://www.acmicpc.net/problem/2163) | Bronze 1 | `수학` `사칙연산` | :heavy_check_mark: |
