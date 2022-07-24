@@ -11,4 +11,5 @@
 | 22.07.23       | BOJ        | [5618번: 공약수](https://www.acmicpc.net/problem/5618) | Bronze 2 | `수학` `브루트포스` `정수론` | :heavy_check_mark: |
 | 22.07.24       | BOJ        | [2747번: 피보나치 수](https://www.acmicpc.net/problem/2747) | Bronze 2 | `수학` `구현` | :heavy_check_mark: |
 | 22.07.24       | BOJ        | [2750번: 수 정렬하기](https://www.acmicpc.net/problem/2750) | Bronze 2 | `수학` `구현` | :heavy_check_mark: |
-| 22.07.24       | BOJ        | [2577번: 숫자의 개수](https://www.acmicpc.net/problem/2577) | Bronze 2 | `수학` `구현` `` | :heavy_check_mark: |
+| 22.07.24       | BOJ        | [2577번: 숫자의 개수](https://www.acmicpc.net/problem/2577) | Bronze 2 | `수학` `구현` | :heavy_check_mark: |
+| 22.07.25       | BOJ        | [10989번: 수 정렬하기 3](https://www.acmicpc.net/problem/10989) | Bronze 1 | `정렬` | |
