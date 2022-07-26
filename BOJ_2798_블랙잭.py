@@ -12,3 +12,20 @@ for data in combination_lists:
     if data <= target:
         print(data)
         break
+
+-------------------------------------------------------------------------------------
+
+N, M = map(int, input().split())
+arr = list(map(int, input().split()))
+           
+# list내에서 순회하며 가능한 경우의 수 모두 구하기
+result = 0
+for i in range(n):
+    for j in range(i+1, n):
+        for k in range(j+1, n):
+            target = arr[i] + arr[j] + arr[k]
+            if target > M:
+                continue
+            else:
+                result = max(result, target)
+print(result)
