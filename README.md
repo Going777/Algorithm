@@ -17,3 +17,6 @@
 | 22.07.26       | BOJ        | [2798번: 블랙잭](https://www.acmicpc.net/problem/2798) | Bronze2 | `브루트포스 알고리즘` | :heavy_check_mark: |
 | 22.07.26       | LeetCode        | [1480번: Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/) | Easy | `Array` `prefix sum` | :heavy_check_mark: |
 | 22.07.26       | LeetCode        | [1481번: Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/) | Medium | `Array` `Hash Table` `Greedy` `Sorting` `Counting` | :heavy_check_mark: :heavy_exclamation_mark: |
+| 22.07.27       | BOJ        | [2520번: 팬케이크 사랑](https://www.acmicpc.net/problem/2520) | Bronze2 | `수학` `구현` `사칙연산` | :heavy_check_mark: |
+
+
