@@ -19,4 +19,5 @@
 | 22.07.26       | LeetCode        | [1481번: Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/) | Medium | `Array` `Hash Table` `Greedy` `Sorting` `Counting` | :heavy_check_mark: :heavy_exclamation_mark: |
 | 22.07.27       | BOJ        | [2520번: 팬케이크 사랑](https://www.acmicpc.net/problem/2520) | Bronze2 | `수학` `구현` `사칙연산` | :heavy_check_mark: |
 | 22.07.28       | BOJ        | [25373번: 벼락치기](https://www.acmicpc.net/problem/25373) | Bronze2 | `수학` `많은 조건 분기` | :heavy_check_mark: |
+| 22.07.29       | BOJ        | [2745번: 진법 변환](https://www.acmicpc.net/problem/2745) | Bronze2 | `수학` `구현` `문자열` | :heavy_check_mark: |
 
