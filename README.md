@@ -21,4 +21,5 @@
 | 22.07.28       | BOJ        | [25373번: 벼락치기](https://www.acmicpc.net/problem/25373) | Bronze2 | `수학` `많은 조건 분기` | :heavy_check_mark: |
 | 22.07.29       | BOJ        | [2745번: 진법 변환](https://www.acmicpc.net/problem/2745) | Bronze2 | `수학` `구현` `문자열` | :heavy_check_mark: |
 | 22.08.02       | BOJ        | [14625번: 냉동식품](https://www.acmicpc.net/problem/14625) | Bronze2 | `구현` | :heavy_check_mark: |
+| 22.08.03       | BOJ        | [11665번: 직육면체 교집합](https://www.acmicpc.net/problem/11665) | Bronze2 | `수학` `기하학` `3차원 기하학` |  |
 
