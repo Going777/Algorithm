@@ -22,5 +22,6 @@
 | 22.07.29       | BOJ        | [2745번: 진법 변환](https://www.acmicpc.net/problem/2745) | Bronze2 | `수학` `구현` `문자열` | :heavy_check_mark: |
 | 22.08.02       | BOJ        | [14625번: 냉동식품](https://www.acmicpc.net/problem/14625) | Bronze2 | `구현` | :heavy_check_mark: |
 | 22.08.03       | BOJ        | [11665번: 직육면체 교집합](https://www.acmicpc.net/problem/11665) | Bronze2 | `수학` `기하학` `3차원 기하학` |  |
-| 22.08.04       | BOJ        | [11655번: ROT13](https://www.acmicpc.net/problem/11655) | Bronze2 | `구현` `문자열` |  |
+| 22.08.04       | BOJ        | [11655번: ROT13](https://www.acmicpc.net/problem/11655) | Bronze1 | `구현` `문자열` |  |
+| 22.08.05       | BOJ        | [1292번: 쉽게 푸는 문제](https://www.acmicpc.net/problem/1292) | Bronze1 | `구현` `` |  |
 
