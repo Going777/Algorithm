@@ -24,4 +24,5 @@
 | 22.08.03       | BOJ        | [11665번: 직육면체 교집합](https://www.acmicpc.net/problem/11665) | Bronze2 | `수학` `기하학` `3차원 기하학` |  |
 | 22.08.04       | BOJ        | [11655번: ROT13](https://www.acmicpc.net/problem/11655) | Bronze1 | `구현` `문자열` | :heavy_check_mark: |
 | 22.08.05       | BOJ        | [1292번: 쉽게 푸는 문제](https://www.acmicpc.net/problem/1292) | Bronze1 | `구현` `수학` | :heavy_check_mark: |
-| 22.08.05       | BOJ        | [1157번: 단어 공부](https://www.acmicpc.net/problem/1157) | Bronze1 | `구현` `` | :heavy_check_mark: |
+| 22.08.05       | BOJ        | [1157번: 단어 공부](https://www.acmicpc.net/problem/1157) | Bronze1 | `구현` `문자열` | :heavy_check_mark: |
+| 22.08.05       | BOJ        | [10814번: 나이순 정렬](https://www.acmicpc.net/problem/10814) | Silver5 | `정렬` | :heavy_check_mark: |
