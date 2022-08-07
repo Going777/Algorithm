@@ -26,3 +26,4 @@
 | 22.08.05       | BOJ        | [1292번: 쉽게 푸는 문제](https://www.acmicpc.net/problem/1292) | Bronze1 | `구현` `수학` | :heavy_check_mark: |
 | 22.08.05       | BOJ        | [1157번: 단어 공부](https://www.acmicpc.net/problem/1157) | Bronze1 | `구현` `문자열` | :heavy_check_mark: |
 | 22.08.05       | BOJ        | [10814번: 나이순 정렬](https://www.acmicpc.net/problem/10814) | Silver5 | `정렬` | :heavy_check_mark: |
+| 22.08.07       | Programmers     | [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | Level1 | `2022 KAKAO BLIND RECRUITMENT` | :heavy_check_mark: |
