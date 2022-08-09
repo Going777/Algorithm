@@ -28,3 +28,4 @@
 | 22.08.05       | BOJ        | [10814번: 나이순 정렬](https://www.acmicpc.net/problem/10814) | Silver5 | `정렬` | :heavy_check_mark: |
 | 22.08.07       | Programmers     | [신고 결과 받기](https://school.programmers.co.kr/learn/courses/30/lessons/92334) | Level1 | `2022 KAKAO BLIND RECRUITMENT` | :heavy_check_mark: |
 | 22.08.09       | SWEA     | [1208번: Faltten](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh) | D3 |  | :heavy_check_mark: |
+| 22.08.10       | SWEA     | [1970번: 쉬운 거스름돈](https://swexpertacademy.com/main/code/problem/problemDetail.do) | D2 |  | :heavy_check_mark: |
