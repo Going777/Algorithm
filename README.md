@@ -30,5 +30,5 @@
 | 22.08.09       | SWEA     | [1208번: Faltten](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh) | D3 |  | :heavy_check_mark: |
 | 22.08.10       | SWEA     | [1970번: 쉬운 거스름돈](https://swexpertacademy.com/main/code/problem/problemDetail.do) | D2 |  | :heavy_check_mark: |
 | 22.08.11       | SWEA     | [4466번: 최대 성적표 만들기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWOUfCJ6qVMDFAWg) | D3 |  | :heavy_check_mark: |
-| 22.08.11       | BOJ     | [1789번: 수들의 합](https://www.acmicpc.net/problem/1789) | 실버5 | `수학` `그리디 알고리즘` | :heavy_check_mark: |
+| 22.08.11       | BOJ     | [1789번: 수들의 합](https://www.acmicpc.net/problem/1789) | Silver5 | `수학` `그리디 알고리즘` | :heavy_check_mark: |
 
