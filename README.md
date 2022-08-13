@@ -32,3 +32,4 @@
 | 22.08.11       | SWEA     | [4466번: 최대 성적표 만들기](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWOUfCJ6qVMDFAWg) | D3 |  | :heavy_check_mark: |
 | 22.08.11       | BOJ     | [1789번: 수들의 합](https://www.acmicpc.net/problem/1789) | Silver5 | `수학` `그리디 알고리즘` | :heavy_check_mark: |
 | 22.08.12       | SWEA     | [1211번: Ladder2](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14BgD6AEECFAYh) | D4 |  | :heavy_check_mark: |
+| 22.08.12       | SWEA     | [1221번: GNS](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14jJh6ACYCFAYD) | D3 |  | :heavy_check_mark: |
