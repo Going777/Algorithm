@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+sys.stdin = open('../D2/input.txt', 'r')
 
 # #     for i in range(N):
 # #         for j in range(N):
