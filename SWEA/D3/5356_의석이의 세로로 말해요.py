@@ -14,9 +14,11 @@ for t in range(1, T+1):
 
     for j in range(max_len):
         for i in range(5):
+            # if j < len(txt_arr[i]):
+            #     result += txt_arr[i][j]
             try:
                 result += txt_arr[i][j]
             except:
-                result += ""
+                pass
 
     print(f"#{t} {result}")
