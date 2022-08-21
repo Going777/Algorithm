@@ -23,6 +23,7 @@ for _ in range(T):
     t, N = map(int, input().split())
     s, e = 0, 99
     size = 100
+    # 인접리스트 만들기
     adjLst = [[] for _ in range(size)]
     lst = list(map(int, input().split()))
     for idx in range(0, N*2, 2):

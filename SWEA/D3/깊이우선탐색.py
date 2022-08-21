@@ -34,12 +34,13 @@ for t in range(1, T+1):
     adjList = [[] for _ in range(N)]
     for _ in range(E):
         x, y = map(int, input().split())
+        # 양방향 처리
         adjList[x-1].append(y-1)
         adjList[y-1].append(x-1)
 
     visited = [0] * N
     stack = [0] * N
-    ans = dfs(0) # 시작 정점은 1이지만 인덱스를 맞춰주기 위해 0으로 생각
+    ans = dfs(0) # 시작 정점은 1이지만 인덱스를 맞춰주기 위해 0부터 시작하는 것으로 생각
     print(f"#{t} {ans}")
 
 
