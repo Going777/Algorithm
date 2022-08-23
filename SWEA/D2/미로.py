@@ -3,7 +3,7 @@ def dfs(si, sj):
     visited[si][sj] = 1
 
     while True:
-        for di, dj in [(-1,0),(1,0),(0,-1),(0,1)]:
+        for di, dj in [(-1,0),(1,0),(0,-1),(0,1)]:  # 상하좌우
             ni = si + di
             nj = sj + dj
             # 상하좌우 검색, 미방문지, 갈 수 있는 길이라면(벽이 아니라면)
@@ -14,7 +14,7 @@ def dfs(si, sj):
                 stack.append([si, sj])  # 현재 위치 기억
 
                 si, sj = ni, nj         # 탐색 기준점 변경
-                visited[si][sj] = 1
+                visited[si][sj] = 1     # 방문 표시
                 break
         else:
             if stack:
@@ -36,13 +36,6 @@ T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     arr = [list(map(int, input())) for _ in range(N)]
-
-    # 출발지, 목적지 행/열 위치 찾기
-    # for i in range(N):
-    #     for j in range(N):
-    #         if arr[i][j] == 2:
-    #             si = i; sj = j
-    #             break
 
     for i in range(N):
         for j in range(N):
