@@ -3,7 +3,8 @@ def dfs(si, sj):
     visited[si][sj] = 1
 
     while True:
-        for di, dj in [(-1,0),(1,0),(0,-1),(0,1)]:  # 상하좌우
+        # 상하좌우 탐색
+        for di, dj in [(-1,0),(1,0),(0,-1),(0,1)]:
             ni = si + di
             nj = sj + dj
             # 상하좌우 검색, 미방문지, 갈 수 있는 길이라면(벽이 아니라면)
@@ -20,8 +21,7 @@ def dfs(si, sj):
             if stack:
                 si, sj = stack.pop()
             else:
-                break
-    return 0    # 모두 탐색했지만 목적지를 발견하지 못했다면 return 0
+                return 0                # 모두 탐색했지만 목적지를 발견하지 못했다면 return 0
 
 def dfs_recur(si, sj):
     for di, dj in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -49,12 +49,6 @@ for tc in range(1, T+1):
     # print(f"#{tc} {result}")
     dfs_recur(si, sj)
     print(f"#{tc} {visited[ei][ej]}")
-
-
-
-
-
-
 
 '''
 3
