@@ -1,6 +1,6 @@
 def my_sort(lst):
     M = len(lst)
-    tmp = []
+    # tmp = []
     for i in range(M-1):
         mn_idx = i
         for j in range(i+1, M):
@@ -12,9 +12,9 @@ def my_sort(lst):
                 if lst[mn_idx] > lst[j]:
                     mn_idx = j
         lst[i], lst[mn_idx] = lst[mn_idx], lst[i]
-        tmp.extend(lst[i])
-    tmp.extend(lst[-1])
-    return tmp
+    #     tmp.extend(lst[i])
+    # tmp.extend(lst[-1])
+    return lst
 
 T = int(input())
 for tc in range(1, T+1):
@@ -39,8 +39,11 @@ for tc in range(1, T+1):
             result.append([counts[idx], idx])
 
     result = my_sort(result)
-    print(f"#{tc} {cnt}", *result)
 
+    print(f"#{tc} {cnt}", end =" ")
+    for row in result:
+        print(*row, end=" ")
+    print(end="\n")
 '''
 3
 5
