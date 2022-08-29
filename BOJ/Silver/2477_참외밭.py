@@ -11,24 +11,16 @@ for _ in range(6):
     arr.append(distance)
 
 N = len(arr)
-mx_w_idx = arr.index(mx_w)
-mx_h_idx = arr.index(mx_h)
-if mx_w_idx < mx_h_idx:
-    if mx_w_idx == 0 and mx_h_idx == N-1:
-        idx1 = 2
-        idx2 = 3
-    else:
-        idx1 = (mx_h_idx + 2) % 6
-        idx2 = (idx1 + 1) % 6
-else:
-    if mx_h_idx == 0 and mx_w_idx == N-1:
-        idx1 = 2
-        idx2 = 3
-    else:
-        idx1 = (mx_w_idx + 2) % 6
-        idx2 = (idx1 + 1) % 6
 
-s = (mx_w * mx_h) - (arr[idx1] * arr[idx2])
+# 제일 긴 가로 변 양옆 세로변 차이 > 뺄 삼각형 세로 길이
+mx_w_idx = arr.index(mx_w)
+sub_w = abs(arr[(mx_w_idx-1)%6] - arr[(mx_w_idx+1)%6])
+# 제일 긴 세로 변 양옆 가로변 차이 > 뺄 삼각형 가로 길이
+mx_h_idx = arr.index(mx_h)
+sub_h = abs(arr[(mx_h_idx-1)%6] - arr[(mx_h_idx+1)%6])
+
+# 최대 넓이에서 작은 사각형 넓이 빼기
+s = (mx_w * mx_h) - (sub_w * sub_h)
 
 print(s*K)
 

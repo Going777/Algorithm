@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('../D2/input.txt', 'r')
+sys.stdin = open('input.txt', 'r')
 
 # #     for i in range(N):
 # #         for j in range(N):
@@ -82,7 +82,7 @@ for _ in range(T):
     arr = [input() for _ in range(N)]
     t_arr = list(zip(*arr)) # 전치 행렬
 
-    for leng in range(N, 1, -1):
+    for leng in range(N, 1, -1):    # 가능한 최대 길이부터 검사
         if isPalindrome(arr, leng) or isPalindrome(t_arr, leng):
             break
 
