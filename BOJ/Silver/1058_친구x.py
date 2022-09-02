@@ -1,30 +1,27 @@
-def dfs(s):
+from collections import deque
+
+def bfs(s):
     global mx_cnt
-    visited = [-1]*N
-    stack = []
+    visited = [0]*N
+    q = deque()
     cnt = 0
 
-    visited[s] = 0
-    # print(s)
+    q.append(s)
+    visited[s] = 1
 
-    while True:
-        for t in adjLst[s]:
-            if visited[t] == -1:
-                stack.append(s)
+    while q:
+        i = q.popleft()
 
-                visited[t] = visited[s] + 1
-                s = t
+        # depth를 2까지만 제한
+        if visited[i]-1 == 2:
+            break
+
+        for t in adjLst[i]:
+            if visited[t] == 0:
                 cnt += 1
+                q.append(t)
+                visited[t] = visited[i] + 1
 
-                # print(s, cnt)
-                break
-        else:
-            if stack:
-                s = stack.pop()
-            else:
-                break
-
-    print("0", visited)
     if mx_cnt < cnt:
         mx_cnt = cnt
 
@@ -39,8 +36,6 @@ for i in range(N):
 
 mx_cnt = 0
 for n in range(N):
-    dfs(n)
-    print()
-    print()
+    bfs(n)
 
 print(mx_cnt)
