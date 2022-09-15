@@ -1,14 +1,40 @@
-T = 1
+def solve(n):
+    if len(tree_info[n]) == 2:
+        return int(tree_info[n][1])
+    else:
+        l = solve(int(tree_info[n][2]))
+        r = solve(int(tree_info[n][3]))
+        op = tree_info[n][1]
+        if op == '+':
+            return l + r
+        elif op == '-':
+            return l - r
+        elif op == '*':
+            return l * r
+        else:
+            return l / r
+
+T = 10
 for tc in range(1, T+1):
-    N = int(input())    # 정점의 수
-    tree = [0] * (N+1)
+    N = int(input())
+    tree_info = [0] * (N+1)
     for _ in range(N):
-        lst = list(input().split())
+        lst = input().split()
+        tree_info[int(lst[0])] = lst
 
-    for i in range(1, N+1):
-        tree[i] = 0
+    ans = int(solve(1))
+    print(f'#{tc} {ans}')
 
-    print(f'#{tc}')
+'''
+7
+1 * 2 3
+2 / 4 5
+3 3
+4 9
+5 - 6 7
+6 6
+7 4
+'''
 
 '''
 107
