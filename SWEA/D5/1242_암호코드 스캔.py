@@ -59,14 +59,20 @@ for tc in range(1, T+1):
     arr = [list(input()) for _ in range(N)]
 
     # 16진수를 2진수로 바꾼 n_arr 만들기
+    t_row = []
+    for row in arr:
+        if row != t_row and row.count('0') == len(row):
+            t_row = row
+        
 
-    n_arr = [[] for _ in range(N)]
-    for i in range(N):
-        for j in range(M):
-            if '0' <= arr[i][j] <= '9':
-                n_arr[i].extend(hex_to_bin(int(arr[i][j])))
-            else:
-                n_arr[i].extend(hex_to_bin(ord(arr[i][j])-ord('A')+10))
+
+    # n_arr = [[] for _ in range(N)]
+    # for i in range(N):
+    #     for j in range(M):
+    #         if '0' <= arr[i][j] <= '9':
+    #             n_arr[i].extend(hex_to_bin(int(arr[i][j])))
+    #         else:
+    #             n_arr[i].extend(hex_to_bin(ord(arr[i][j])-ord('A')+10))
 
     print(f'#{tc} {sum(solve())}')
 
