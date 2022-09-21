@@ -11,6 +11,7 @@ def dfs(n, sm):
         if sm == K:             # 지금까지의 합이 K와 같다면 cnt + 1
             cnt += 1
         return
+
     # 하부 함수(n+1) 호출
     else:
         dfs(n+1, sm + lst[n])   # 해당 숫자(n)를 사용하는 경우
