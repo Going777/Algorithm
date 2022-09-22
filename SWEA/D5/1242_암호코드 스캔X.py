@@ -63,7 +63,7 @@ for tc in range(1, T+1):
     for row in arr:
         if row != t_row and row.count('0') == len(row):
             t_row = row
-        
+
 
 
     # n_arr = [[] for _ in range(N)]
