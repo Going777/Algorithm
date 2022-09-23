@@ -5,75 +5,46 @@
 이동 후 두개의 군집이 한 셀에 모이면 군집들이 합쳐짐 & 이동방향은 미생물 수가 많은 군집 방향으로
 M시간 후 남아있는 미생물 수 총합은?
 '''
-rev_direct = {'1':'2', '2':'1', '3':'4', '4':'3'}
-def solve(micros):
-    t = 1
-    while t <= M:
-        for idx, micro in enumerate(micros):
-            i, j, m, d = micro
-            # 다음 후보지 위치 찾기
-            if d == 1: ni=i-1 ; nj=j        # 상
-            elif d == 2: ni=i+1 ; nj=j      # 하
-            elif d == 3: ni=i ; nj=j-1      # 좌
-            else: ni=i ; nj=j+1             # 우
-            micro[0] = ni ; micro[1] = nj   # 좌표 업데이트
-
-            if (ni in [0, N-1]) or (nj in [0, N-1]):    # 약품 칠해진 공간에 속한다면
-                micro[2] = m // 2                       # 미생물 절반 줄어듬
-                if micro[2] == 0:                       # 미생물이 0이라면 군집 삭제
-                    micros.pop(idx)
-                else:
-                    micro[3] = int(rev_direct[str(d)])  # 방향 반대로 업데이트
-
-        micros.sort()
-        i = 0; j = i+1
-        tmp = [micros[i]]
-        while True:
-            if i == len(micros)-1:
-                break
-            if micros[i][0] == micros[j][0] and micros[i][1] == micros[j][1]:
-                tmp.append(micros[j])
-                j += 1
-            else:
-                mx = 0 ; sm = 0
-                for idx, t in enumerate(tmp):
-                    sm += t[2]
-                    if t > mx:
-                        t = mx
-                micros[i][3] = tmp[mx][3]
-                micros[i][2] = sm
-                j += 1
-            if j == len(micros):
-                i += 1 ; j = i+1
-                tmp = [micros[i]]
-
-            # if micros[i][0] == micros[j][0] and micros[i][1] == micros[j][1]:
-            #     tmp.append(micros[j])
-            #     j += 1
-            #     if micros[i][2] < micros[j][2]:
-            #         micros[i][3] = micros[j][3]
-            #     micros[i][2] += micros[j][2]
-            #     micros.pop(j)
-            # else:
-            #     j += 1
-            #     if j == len(micros):
-            #         i += 1 ; j = i+1
-        t += 1
-    ans = 0
-    for micro in micros:
-        ans += micro[2]
-    return ans
+r_dir = [0,2,1,4,3]
+di = [0,-1,1,0,0]
+dj = [0,0,0,-1,1]
 
 T = int(input())
 for tc in range(1, T+1):
-    N, M, K, = map(int, input().split())    # N: 행렬 크기 / M: 격리 시간 / K: 미생물 군집 수
-    micros = []
-    # 세로위치, 가로위치, 미생물 수, 이동방향(상:1, 하:2, 좌:3, 우:4)
-    for _ in range(K):
-        i, j, m, d = map(int, input().split())
-        micros.append([i, j, m, d])
-    ans = solve(micros)
+    N, M, K = map(int, input().split())     # N: 행렬 크기 / M: 격리 시간 / K: 미생물 군집 수
+    arr = [list(map(int, input().split())) for _ in range(K)]
+
+    for _ in range(M):  # M회 만큼 이동
+        for i in range(len(arr)):
+            # 1칸 이동처리
+            # [0]은 i좌표 / [1]은 j좌표 / [2]는 미생물 수 / [3]은 방향
+            arr[i][0] = arr[i][0]+di[arr[i][3]]
+            arr[i][1] = arr[i][1]+dj[arr[i][3]]
+
+            # 이동한 좌표가 경계인 경우 처리
+            if arr[i][0] in [0, N-1] or arr[i][1] in [0, N-1]:
+                arr[i][2] //= 2                 # 미생물 수 절반으로
+                arr[i][3] = r_dir[arr[i][3]]    # 방향 반대로
+
+        # 같은 좌표 처리 (위쪽 큰 미생물과 합치고, 방향 찾기)
+        arr.sort(key=lambda x: (x[0], x[1], x[2]), reverse=True)  # 같은 좌표가 나란히 위치 & 미생물 수는 더 많은게 먼저 오도록 조작
+        i = 1
+        while i < len(arr): # pop을 사용할 것이기 때문에 length 사용!!!
+            # 같은 경우 합치고 본인은 제거
+            if arr[i-1][0:2] == arr[i][0:2]:
+                arr[i-1][2] += arr[i][2]
+                arr.pop(i)
+            # 다르다면 밑으로 내려가서 다시 비교
+            else:
+                i += 1
+
+    # 남아있는 미생물 수 모두 더하기
+    ans = 0
+    for lst in arr:
+        ans += lst[2]
+
     print(f'#{tc} {ans}')
+
 
 '''
 1

@@ -1,42 +1,117 @@
-from collections import deque
+# [1] bfs - 완전탐색
+# 시작지점(N * N) * 범위(N * N) => N^4 만큼의 시간복잡도
 
-def solve(i, j, k, cost):
-    q = deque()
-    visited = [[0]*N for _ in range(N)]
+# from collections import deque
+# def solve(i, j, k, cost):
+#     q = deque()
+#     visited = [[0]*N for _ in range(N)]
+#
+#     q.append([i, j])
+#     visited[i][j] = 1
+#     cnt = arr[i][j]
+#
+#     while q:
+#         i, j = q.popleft()
+#         for di, dj in [(-1,0), (1,0), (0,-1), (0,1)]:
+#             ni = i + di ; nj = j + dj
+#             if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj] and visited[i][j] < k:
+#                 q.append([ni, nj])
+#                 visited[ni][nj] = visited[i][j] + 1
+#                 cnt += arr[ni][nj]
+#
+#     # 손해를 보지 않아야 함
+#     if cost <= cnt*M:
+#         return cnt
+#     else:
+#         return 0
+#
+# T = int(input())
+# for tc in range(1, T+1):
+#     N, M = map(int, input().split())    # N: 도시 크기 / M: 한 집 당 지불 비용
+#     arr =[list(map(int, input().split())) for _ in range(N)]
+#
+#     ans = 0
+#     for k in range(N+1, 0, -1):
+#         cost = k*k + (k-1)*(k-1)    # 운영비용
+#         for i in range(N):
+#             for j in range(N):
+#                 # 가장 많은 집에 서비스 제공 > 최댓값 찾기
+#                 ans = max(ans, solve(i, j, k, cost))
+#
+#     print(f'#{tc} {ans}')
 
-    q.append([i, j])
-    visited[i][j] = 1
-    cnt = arr[i][j]
+# ----------------------------------------------------------------------------------------
+# 좀 더 효율적인 bfs
 
-    while q:
-        i, j = q.popleft()
-        for di, dj in [(-1,0), (1,0), (0,-1), (0,1)]:
-            ni = i + di ; nj = j + dj
-            if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj] and visited[i][j] < k:
-                q.append([ni, nj])
-                visited[ni][nj] = visited[i][j] + 1
-                cnt += arr[ni][nj]
+# cost = [k*k + (k-1)*(k-1) for k in range(40)]
+#
+# def bfs(i, j):
+#     global ans
+#     q = []
+#     visited = [[0]*N for _ in range(N)]
+#     cnt = 0
+#
+#     q.append([i, j])
+#     visited[i][j] = 1
+#     cnt += arr[i][j]
+#
+#     while q:
+#         i, j = q.pop(0)
+#         for di, dj in ([(-1,0),(1,0),(0,-1),(0,1)]):
+#             ni, nj = i + di, j + dj
+#             if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj]:     # 범위 내이면서, 방문 안 한 곳이라면
+#                 q.append([ni, nj])
+#                 visited[ni][nj] = visited[i][j] + 1                     # 해당값을 k값처럼 취급하여 처리
+#                 if arr[ni][nj] == 1:                                    # 집을 발견했다면 cnt+=1
+#                     cnt += 1
+#                     if cost[visited[ni][nj]] <= cnt*M and ans < cnt:    # 손해를 보지 않으면서, 기존 ans보다 더 크다면 갱신
+#                         ans = cnt
+#
+# N, M = map(int, input().split())
+# arr = [list(map(int, input().split())) for _ in range(N)]
+#
+# # 모든 시작위치에서 bfs 실행해서 정답 갱신
+# ans = 0
+# for i in range(N):
+#     for j in range(N):
+#         bfs(i, j)
+# print(ans)
 
-    # 손해를 보지 않아야 함
-    if cost <= cnt*M:
-        return cnt
-    else:
-        return 0
+# --------------------------------------------------------------------------------------------
+# 아이디어성 풀이
+# 시작 좌표를 기준으로 거리만큼 반경 내 있는 집 개수 구하기
 
-T = int(input())
-for tc in range(1, T+1):
-    N, M = map(int, input().split())    # N: 도시 크기 / M: 한 집 당 지불 비용
-    arr =[list(map(int, input().split())) for _ in range(N)]
+# 모든 시작좌표 순회
+    # [1] home 배열에 집 좌표 저장 & 시작좌표까지의 거리를 dist 배열에 표시
+    # [2] dist 배열 누적시키기 > 조건에 맞으면 정답 갱신
 
-    ans = 0
-    for k in range(N+1, 0, -1):
-        cost = k*k + (k-1)*(k-1)    # 운영비용
-        for i in range(N):
-            for j in range(N):
-                # 가장 많은 집에 서비스 제공 > 최댓값 찾기
-                ans = max(ans, solve(i, j, k, cost))
+cost = [k*k + (k-1)*(k-1) for k in range(40)]
+N, M = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(N)]
 
-    print(f'#{tc} {ans}')
+# 집 좌표 저장하기
+home = []
+for i in range(N):
+    for j in range(N):
+        if arr[i][j]:
+            home.append([i, j])
+
+# 모든 좌표 순회하면서 dist 배열 누적
+ans = 0
+for i in range(N):
+    for j in range(N):
+        dist = [0]*2*N # 최대 2*N개 만큼 만들어질 것
+        for hi, hj in home:
+            d = abs(i-hi)+abs(j-hj)+1   # 같은 위치면 k가 1이므로, +1필요
+            dist[d] += 1
+
+        # 기준위치 기준 k를 1부터 늘려가면서 정답 갱신
+        cnt = 0
+        for k in range(2*N):
+            cnt += dist[k]      # k범위까지의 집의 개수
+            if cost[k] <= cnt*M and cnt > ans:
+                ans = cnt
+print(ans)
 
 '''
 10
