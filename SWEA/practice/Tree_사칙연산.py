@@ -25,6 +25,35 @@ for tc in range(1, T+1):
     ans = int(solve(1))
     print(f'#{tc} {ans}')
 
+
+# def solve(n):
+#     if n <= N:
+#         if tree[n] == '+':
+#             return solve(ch1[n]) + solve(ch2[n])
+#         elif tree[n] == '-':
+#             return solve(ch1[n]) - solve(ch2[n])
+#         elif tree[n] == '*':
+#             return solve(ch1[n]) * solve(ch2[n])
+#         elif tree[n] == '/':
+#             return solve(ch1[n]) / solve(ch2[n])
+#         else:
+#             return tree[n]
+#
+# N = int(input())
+# tree = [0]*(N+1)
+# ch1 = [0]*(N+1)
+# ch2 = [0]*(N+1)
+# for _ in range(N):
+#     lst = list(input().strip().split())
+#     if len(lst) == 4:
+#         tree[int(lst[0])] = lst[1]
+#         ch1[int(lst[0])] = int(lst[2])
+#         ch2[int(lst[0])] = int(lst[3])
+#     else:
+#         tree[int(lst[0])] = int(lst[1])
+#
+# print(int(solve(1)))
+
 '''
 7
 1 * 2 3
