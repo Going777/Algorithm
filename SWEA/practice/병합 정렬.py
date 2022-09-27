@@ -1,44 +1,32 @@
 def merge_sort(lst):
     global cnt
-    # 종료 조건
+    # 종료 조건 (정렬 대상이 1개일 때)
     if len(lst) <= 1:
         return lst
 
-    # 분할
-    m = len(lst)//2         # 중간값 인덱스
-    l = merge_sort(lst[:m]) # 왼쪽 그룹
-    r = merge_sort(lst[m:]) # 오른쪽 그룹
+    # 반을 나눠서 각각 정렬
+    m = len(lst) // 2
+    left = merge_sort(lst[:m])
+    right = merge_sort(lst[m:])
 
-    # 문제 요구사항
-    if l[-1] > r[-1]:   # 왼쪽 그룹의 마지막 원소가 오른쪽 그룹의 마지막 원소보다 크다면
-        cnt += 1        # cnt + 1
+    # 문제 요구 사항(왼쪽 마지막 원소가 오른쪽 마지막 원소보다 클 때 cnt+1)
+    if left[-1] > right[-1]:
+        cnt += 1
 
-    # 병합
-    merged_lst = []     # 병합 배열
-    len_l = len(l)
-    len_r = len(r)
-    i = 0               # 왼쪽 배열 인덱스
-    j = 0               # 오른쪽 배열 인덱스
-    # 각 그룹 모두에 데이터가 남아있는 동안 반복
-    while i < len_l and j < len_r:
-        # 각 그룹의 맨 앞 데이터 값 비교(더 작은 값 병합 배열에 추가)
-        if l[i] < r[j]:
-            merged_lst.append(l[i])
-            i += 1
+    # left, right 배열에서 더 작은 값을 병합 리스트에 추가
+    ret = []    # 병합 리스트
+    l = r = 0   # left / right 배열 인덱스
+    while l < len(left) and r < len(right):
+        if left[l] < right[r]:
+            ret.append(left[l])
+            l += 1
         else:
-            merged_lst.append(r[j])
-            j += 1
-
-    # 각 그룹에 데이터가 남아있는 경우 처리
+            ret.append(right[r])
+            r += 1
+    # 각 그룹에 데이터가 남아있는 경우 병합 리스트 뒤쪽에 추가
     # 남은 원소가 없거나 l 또는 r 그룹 중 한 그룹에만 원소가 남아있을 것이므로 코드 순서 신경X
-    while i < len_l:
-        merged_lst.append(l[i])
-        i += 1
-    while j < len_r:
-        merged_lst.append(r[j])
-        j += 1
-
-    return merged_lst
+    ret += left[l:] + right[r:]
+    return ret
 
 T = int(input())
 for tc in range(1, T+1):
