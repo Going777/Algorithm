@@ -1,4 +1,4 @@
-def subtree(N):
+ def subtree(N):
     global cnt
     if N:
         cnt += 1

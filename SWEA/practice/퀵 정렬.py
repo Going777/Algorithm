@@ -1,18 +1,18 @@
 # 리스트를 이용
-# def quick_sort(lst):
-#     # 종료 조건
-#     if len(lst) <= 1:
-#         return lst
-#     # pivot을 기준으로 좌/우로 나눔 (단위작업)
-#     pivot = lst.pop()
-#     left, right = [], []
-#     for n in lst:
-#         if n < pivot:
-#             left.append(n)
-#         else:
-#             right.append(n)
-#     # 왼쪽 정렬, 오른쪽 정렬, 그 결과를 합쳐서 리턴
-#     return quick_sort(left) + [pivot] + quick_sort(right)
+def quick_sort(lst):
+    # 종료 조건
+    if len(lst) <= 1:
+        return lst
+    # pivot을 기준으로 좌/우로 나눔 (단위작업)
+    pivot = lst.pop()
+    left, right = [], []
+    for n in lst:
+        if n < pivot:
+            left.append(n)
+        else:
+            right.append(n)
+    # 왼쪽 정렬, 오른쪽 정렬, 그 결과를 합쳐서 리턴
+    return quick_sort(left) + [pivot] + quick_sort(right)
 
 # 인덱스를 이용(파이썬 외 언어 사용시 짜야할 코드 흐름) > 조금 더 빠름
 def quick_sort2(s, e):
