@@ -1,0 +1,20 @@
+'''
+양의 정수 N에 대해 N=X^3가 되는 양의 정수 X를 구하여라
+1 <= N <= 10^18
+'''
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    ans = -1
+    for i in range(int(N**(1/3))+1, int(N**(1/3))-1, -1):
+        if i**3 == N:
+            ans = i
+            break
+    print(f'#{tc} {ans}')
+
+'''
+3
+27
+7777
+64
+'''
