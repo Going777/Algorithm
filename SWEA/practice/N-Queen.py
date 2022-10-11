@@ -73,9 +73,9 @@ for tc in range(1, T+1):
     arr = [[0]*N for _ in range(N)]
     ans = 0
     v1,v2,v3=[],[],[]
-    solve(0)
     # dfs(n)
     dfs2(0)
+    solve(0)
     print(f'#{tc} {ans}')
 
 '''

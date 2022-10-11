@@ -2,7 +2,7 @@ def dijkstra(s):
     D = adjA[s][:]
     visited = [0]*N
     visited[s] = 1
-    for _ in range(N-1):     # N-1개의 남은 노드 처리
+    for _ in range(N-1):     # 출발 제외 N-1개의 남은 노드 처리
         # 미방문 노드 중 최소거리 노드 번호 찾기 & 방문 표시
         mn = INF
         i_mn = 0
