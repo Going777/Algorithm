@@ -20,3 +20,4 @@ for i in range(N):
     if arr[i] != -2 and i not in arr:
         cnt += 1
 print(cnt)
+
