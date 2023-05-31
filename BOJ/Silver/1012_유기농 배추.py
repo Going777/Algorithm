@@ -1,9 +1,10 @@
 from collections import deque
+import sys
+input = sys.stdin.readline
 
 di = [-1,1,0,0] ; dj = [0,0,-1,1]
 def bfs(i, j):
     q = deque()
-
     q.append([i, j])
     visited[i][j] = 1
     arr[i][j] = 2
