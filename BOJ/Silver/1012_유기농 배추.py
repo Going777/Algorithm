@@ -12,6 +12,7 @@ def bfs(i, j):
     while q:
         i, j = q.popleft()
 
+
         for k in range(4):
             ni = i + di[k] ; nj = j + dj[k]
             if 0 <= ni < N and 0 <= nj < M and not visited[ni][nj] and arr[ni][nj] == 1:
