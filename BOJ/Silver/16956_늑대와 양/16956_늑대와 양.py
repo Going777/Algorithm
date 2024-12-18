@@ -24,13 +24,3 @@ if catch:
 else:
     print(1)
     [print(''.join(row)) for row in arr]
-
-'''
-6 6
-..S...
-..S.W.
-.S....
-..W...
-...W..
-......
-'''
