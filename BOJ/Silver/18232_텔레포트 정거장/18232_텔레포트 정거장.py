@@ -17,7 +17,7 @@ def bfs(s):
         if adjLst[i]:       # 인접리스트 내 갈 수 있는 텔레포트가 있다면
             d += adjLst[i]  # 탐색 리스트에 해당 원소값들 추가
         for ni in d:
-            if 1 <= ni <= N and not visited[ni]:
+            if 0 < ni < N + 1 and not visited[ni]:
                 q.append(ni)
                 visited[ni] = visited[i] + 1
 
